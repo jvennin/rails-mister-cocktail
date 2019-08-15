@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h1><%= @cocktail.name %></h1>
+  <ul>
+    <% @doses.each do |dose| %>
+    <li><%= dose.amount %> <%= dose.ingredient.name %><%= link_to "Delete", dose_path(dose), method: :delete, class: 'btn btn-danger'%></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+  <%= link_to cocktails_path do %>
+  <i class="fas fa-history"></i> Back to list
+  <% end %>
+</div>
