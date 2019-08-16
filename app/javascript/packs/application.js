@@ -17,4 +17,9 @@
 
 console.log('Hello World from Webpacker')
 import 'bootstrap';
-
+import { initUpdateNavbarOnScroll } from '../components/navbars';
+initUpdateNavbarOnScroll();
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
+import { valide } from '../components/sweetalert.js';
+valide();
