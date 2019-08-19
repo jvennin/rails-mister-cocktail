@@ -14,12 +14,16 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
-console.log('Hello World from Webpacker')
 import 'bootstrap';
 import { initUpdateNavbarOnScroll } from '../components/navbars';
 initUpdateNavbarOnScroll();
+
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
-import { valide } from '../components/sweetalert.js';
+const banner = document.querySelector("#banner-typed-text");
+if ( banner !== null ) {
+  loadDynamicBannerText();
+}
+
+import { valide } from '../components/sweetalert';
 valide();
+

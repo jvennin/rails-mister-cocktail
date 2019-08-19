@@ -1,11 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill unless @cocktail.photo.blank? %>);">
+  <div class="container text-center">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
 <div class="container mt-5">
-  <h1><%= @cocktail.name %></h1>
-  <ul>
+  <h1 class="title">Recipe</h1>
+  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: 'my-3 btn btn-primary mt' %>
+  <ul class="list-group">
     <% @doses.each do |dose| %>
-    <li><%= dose.amount %> <%= dose.ingredient.name %><%= link_to "Delete", dose_path(dose), method: :delete, class: 'btn btn-danger'%></li>
+    <li class="list-group-item"><%= dose.amount %> <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose), method: :delete, class: ''%></li>
     <% end %>
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
   </ul>
-  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
   <%= link_to cocktails_path do %>
   <i class="fas fa-history"></i> Back to list
   <% end %>
